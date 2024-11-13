@@ -9,5 +9,4 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
     public List<Person> findAllByName(String name);
-
 }

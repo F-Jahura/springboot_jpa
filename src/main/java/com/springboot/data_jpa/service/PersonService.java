@@ -8,14 +8,9 @@ public interface PersonService {
     public List<Person> getAllPeople();
 
     public List<Person> findAllByName(String name);
-
-    /*
     public void savePerson(Person person);
-    public Person getPerson(int id);
     public void deletePerson(int id);
-
-     */
-
+    //public Person getPerson(int id);
 
 }
 
