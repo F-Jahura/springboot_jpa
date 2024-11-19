@@ -10,7 +10,9 @@ public interface PersonService {
     public List<Person> findAllByName(String name);
     public void savePerson(Person person);
     public void deletePerson(int id);
-    //public Person getPerson(int id);
+    public Person findAllByNameAndAge(String name, Integer age);
+    public List<Person> findAllByAge(Integer age);
 
+    //public Person getPerson(int id);
 }
 

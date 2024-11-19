@@ -43,6 +43,26 @@ public class MyRestController {
         return "Person with ID = " + id + " was deleted";
 }
 
+//find person by name and age
+@GetMapping("/person/name-age")
+    public Person personNameAge(@RequestParam String name, @RequestParam Integer age){
+        return personService.findAllByNameAndAge(name, age);
+    }
+
+//find person by age
+@GetMapping("/person/get-age")
+    public List<Person> showPersonByAge(@RequestParam Integer age){
+        List<Person> personList = personService.findAllByAge(age);
+        return personList;
+}
+
+//add new person
+@PostMapping("/add-person")
+    public Person addNewPerson(@RequestBody Person person){
+        personService.savePerson(person);
+        return person;
+}
+
 //find person by id
 /*
 @GetMapping("/find-person/{id}")
@@ -50,14 +70,6 @@ public Person getPerson1(@PathVariable int id){
         Person person = personService.getPerson(id);
         return person;
     }
-
-// add new person
-@PostMapping("/add-person")
-public Person addNedPerson(@RequestBody Person person){
-        personService.savePerson(person);
-        return person;
-    }
-
  */
 
 }

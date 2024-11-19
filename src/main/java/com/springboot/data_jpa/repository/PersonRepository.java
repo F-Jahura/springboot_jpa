@@ -8,5 +8,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
+
     public List<Person> findAllByName(String name);
+    public Person findAllByNameAndAge(String name, Integer age);
+    public List<Person> findAllByAge(Integer age);
+
 }

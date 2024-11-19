@@ -40,6 +40,18 @@ public class PersonServiceImpl implements PersonService {
         personRepository.deleteById(id);
     }
 
+    //find person by age
+    @Override
+    public List<Person> findAllByAge(Integer age) {
+        return personRepository.findAllByAge(age);
+    }
+
+    //find person by name and age
+    @Override
+    public Person findAllByNameAndAge(String name, Integer age) {
+        return personRepository.findAllByNameAndAge(name, age);
+    }
+
     //find person by id
     /*@Override
     public Person getPerson(int id) {
