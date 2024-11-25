@@ -1,6 +1,9 @@
 package com.springboot.data_jpa.Controller;
 
+import com.springboot.data_jpa.Converter.PersonConverter;
+import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
+import com.springboot.data_jpa.repository.PersonRepository;
 import com.springboot.data_jpa.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,6 +16,10 @@ public class MyRestController {
 
     @Autowired
     private PersonService personService;
+    @Autowired
+    PersonRepository personRepository;
+    @Autowired
+    PersonConverter converter;
 
     //List of all people
     @GetMapping("/person")
@@ -45,7 +52,7 @@ public class MyRestController {
 
 //find person by name and age
 @GetMapping("/person/name-age")
-    public Person personNameAge(@RequestParam String name, @RequestParam Integer age){
+    public List<Person> personNameAge(@RequestParam String name, @RequestParam Integer age){
         return personService.findAllByNameAndAge(name, age);
     }
 
@@ -61,6 +68,18 @@ public class MyRestController {
     public Person addNewPerson(@RequestBody Person person){
         personService.savePerson(person);
         return person;
+}
+
+@GetMapping("/findall-dto")
+    public List<PersonDto> findAllDto(){
+       List<Person> findAll = personRepository.findAll();
+       return converter.entityToDto(findAll);
+}
+
+@GetMapping("/age-over30")
+    public List<PersonDto> findAge30(){
+        List<Person> findAgeOver30 = personRepository.findAllPersonOver30();
+        return converter.entityToDto(findAgeOver30);
 }
 
 //find person by id

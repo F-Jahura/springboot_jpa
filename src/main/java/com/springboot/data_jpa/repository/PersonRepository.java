@@ -1,16 +1,24 @@
 package com.springboot.data_jpa.repository;
 
+import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
 import org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 
+import java.util.Collection;
 import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 
     public List<Person> findAllByName(String name);
-    public Person findAllByNameAndAge(String name, Integer age);
+    public List<Person> findAllByNameAndAge(String name, Integer age);
     public List<Person> findAllByAge(Integer age);
+
+    @Query(
+            value = "SELECT * FROM people p WHERE p.age >= 30",
+            nativeQuery = true)
+    public List<Person> findAllPersonOver30();
 
 }
