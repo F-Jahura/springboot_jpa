@@ -3,9 +3,13 @@ package com.springboot.data_jpa.Controller;
 import com.springboot.data_jpa.Converter.PersonConverter;
 import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
+import com.springboot.data_jpa.exception_handling.PersonException;
+import com.springboot.data_jpa.exception_handling.PersonIncorrectData;
 import com.springboot.data_jpa.repository.PersonRepository;
 import com.springboot.data_jpa.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -33,8 +37,13 @@ public class MyRestController {
     //public Person getPerson(@RequestParam String name){
     public List<Person> showAllPersonByName(@RequestParam String name){
          List<Person> personList = personService.findAllByName(name);
+         /*if (personList == null){
+             throw new PersonException("There is no person with name = " +
+                     name + " in Database");
+         }*/
          return personList;
 }
+
 
 //update person
 @PutMapping("/update-person")
@@ -83,12 +92,25 @@ public class MyRestController {
 }
 
 //find person by id
-/*
+
 @GetMapping("/find-person/{id}")
-public Person getPerson1(@PathVariable int id){
-        Person person = personService.getPerson(id);
-        return person;
+public Person getPerson1(@PathVariable int id) {
+    Person person = personService.getPerson(id);
+    if (person == null) {
+        throw new PersonException("There is no person with id = " +
+                id + " in Database");
     }
- */
+    return person;
+}
+
+@GetMapping("/find-name/{name}")
+public Person getPersonName(@PathVariable String name){
+        Person person = personService.findByName(name);
+    if (person == null) {
+        throw new PersonException("There is no person with name = " +
+                name + " in Database");
+    }
+        return person;
+}
 
 }

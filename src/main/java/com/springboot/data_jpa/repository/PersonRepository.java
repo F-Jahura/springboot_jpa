@@ -12,6 +12,7 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 
+    public Person findByName(String name);
     public List<Person> findAllByName(String name);
     public List<Person> findAllByNameAndAge(String name, Integer age);
     public List<Person> findAllByAge(Integer age);

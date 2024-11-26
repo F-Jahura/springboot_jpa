@@ -53,7 +53,7 @@ public class PersonServiceImpl implements PersonService {
     }
 
     //find person by id
-    /*@Override
+    @Override
     public Person getPerson(int id) {
         Person person = null;
         Optional<Person> optional = personRepository.findById(id);
@@ -63,6 +63,11 @@ public class PersonServiceImpl implements PersonService {
         }
         else System.out.println("ID is not found.");
         return person;
-    }*/
+    }
+
+    @Override
+    public Person findByName(String name) {
+        return personRepository.findByName(name);
+    }
 }
 
