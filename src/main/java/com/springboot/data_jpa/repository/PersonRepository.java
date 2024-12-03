@@ -1,13 +1,10 @@
 package com.springboot.data_jpa.repository;
 
-import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
-import org.springframework.boot.autoconfigure.context.LifecycleAutoConfiguration;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
-import java.util.Collection;
 import java.util.List;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {

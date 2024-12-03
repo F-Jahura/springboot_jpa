@@ -24,22 +24,25 @@ public class Person {
     @Column(name="name")
     private String name;
 
-    @Column(name="age")
-    private int age;
-
     @Column(name = "surname")
     private String surname;
+
+    @Column(name = "patronymic")
+    private String patronymic;
+
+    @Column(name="age")
+    private int age;
 
     //@Temporal(TemporalType.TIMESTAMP)
     private LocalDate creation_date;
 
     //@Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "password")
-    private String password;
+    //@Column(name = "password")
+    //private String password;
 
     //@Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "passport")
-    private String passport;
+    /*@Column(name = "passport_id")
+    private String passport_id;*/
 
     //@Temporal(TemporalType.TIMESTAMP)
     @Column(name = "address")
@@ -48,4 +51,9 @@ public class Person {
     //@Temporal(TemporalType.TIMESTAMP)
     @Column(name = "mobile")
     private String mobile;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "passport_id")
+    private Passport passport;
+
 }

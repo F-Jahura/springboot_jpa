@@ -2,14 +2,14 @@ package com.springboot.data_jpa.Controller;
 
 import com.springboot.data_jpa.Converter.PersonConverter;
 import com.springboot.data_jpa.dto.PersonDto;
+import com.springboot.data_jpa.entity.Passport;
 import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.exception_handling.PersonException;
-import com.springboot.data_jpa.exception_handling.PersonIncorrectData;
+import com.springboot.data_jpa.repository.PassportRepository;
 import com.springboot.data_jpa.repository.PersonRepository;
+import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -21,9 +21,15 @@ public class MyRestController {
     @Autowired
     private PersonService personService;
     @Autowired
+    PassportService passportService;
+    @Autowired
     PersonRepository personRepository;
     @Autowired
     PersonConverter converter;
+
+    @Autowired
+    private PassportRepository passportRepository;
+
 
     //List of all people
     @GetMapping("/person")
@@ -92,7 +98,6 @@ public class MyRestController {
 }
 
 //find person by id
-
 @GetMapping("/find-person/{id}")
 public Person getPerson1(@PathVariable int id) {
     Person person = personService.getPerson(id);
@@ -111,6 +116,34 @@ public Person getPersonName(@PathVariable String name){
                 name + " in Database");
     }
         return person;
+}
+
+
+//find person with passport details by name
+@GetMapping("/person-passport/by-name")
+public List<PersonDto> showAllDetailsByName(@RequestParam String name){
+    List<Person> personList = personRepository.findAllByName(name);
+        return converter.entityToDto(personList);
+    }
+
+//add new person-passport
+@PostMapping("/add-passport")
+public Passport addNewPassport(@RequestBody Passport passport){
+        passportService.savePassport(passport);
+    return passport;
+}
+
+//add new person with passport details
+@PostMapping("/add-person-passport")
+    public Person addPersonPassport(@RequestBody Person person){
+        personService.savePerson(person);
+        return person;
+}
+
+@PutMapping("/update-person-passport")
+public Person updatePersonPassport(@RequestBody Person person){
+    personService.savePerson(person);
+    return person;
 }
 
 }
