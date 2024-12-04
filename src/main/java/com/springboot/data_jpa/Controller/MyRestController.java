@@ -134,13 +134,24 @@ public Passport addNewPassport(@RequestBody Passport passport){
 }
 
 //add new person with passport details
-@PostMapping("/add-person-passport")
+@PostMapping("/add/person-passport")
     public Person addPersonPassport(@RequestBody Person person){
         personService.savePerson(person);
         return person;
 }
 
-@PutMapping("/update-person-passport")
+//add list of new person with passport details
+@PostMapping("/add/list/person-passport")
+public List<Person> addPersonPassportList(@RequestBody List<Person> person){
+    List<Person> personList = personService.savePersonList(person);
+    //personService.savePerson(person);
+    return personList;
+    }
+
+
+
+//update person with passport details
+@PutMapping("/update/person-passport")
 public Person updatePersonPassport(@RequestBody Person person){
     personService.savePerson(person);
     return person;

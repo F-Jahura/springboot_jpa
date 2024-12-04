@@ -1,6 +1,5 @@
 package com.springboot.data_jpa.service;
 
-import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,6 +69,10 @@ public class PersonServiceImpl implements PersonService {
         return repository.findByName(name);
     }
 
+    @Override
+    public List<Person> savePersonList(List<Person> person) {
+        return repository.saveAll(person);
+    }
 
 
 }
