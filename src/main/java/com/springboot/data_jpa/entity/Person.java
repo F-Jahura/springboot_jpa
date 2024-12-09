@@ -1,5 +1,6 @@
 package com.springboot.data_jpa.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -36,13 +37,8 @@ public class Person {
     //@Temporal(TemporalType.TIMESTAMP)
     private LocalDate creation_date;
 
-    //@Temporal(TemporalType.TIMESTAMP)
-    //@Column(name = "password")
-    //private String password;
-
-    //@Temporal(TemporalType.TIMESTAMP)
-    /*@Column(name = "passport_id")
-    private String passport_id;*/
+    @Column(name = "password")
+    private String password;
 
     //@Temporal(TemporalType.TIMESTAMP)
     @Column(name = "address")
@@ -55,5 +51,10 @@ public class Person {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "passport_id")
     private Passport passport;
+
+
+    @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+    @JoinColumn(name = "department_id")
+    private Department department;
 
 }

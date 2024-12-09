@@ -1,12 +1,17 @@
 package com.springboot.data_jpa.Controller;
 
+import com.springboot.data_jpa.Converter.DepartmentConverter;
 import com.springboot.data_jpa.Converter.PersonConverter;
+import com.springboot.data_jpa.dto.DepartmentDto;
 import com.springboot.data_jpa.dto.PersonDto;
+import com.springboot.data_jpa.entity.Department;
 import com.springboot.data_jpa.entity.Passport;
 import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.exception_handling.PersonException;
+import com.springboot.data_jpa.repository.DepartmentRepository;
 import com.springboot.data_jpa.repository.PassportRepository;
 import com.springboot.data_jpa.repository.PersonRepository;
+import com.springboot.data_jpa.service.DepartmentService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +34,15 @@ public class MyRestController {
 
     @Autowired
     private PassportRepository passportRepository;
+
+    @Autowired
+    private DepartmentService departmentService;
+
+    //@Autowired
+    //DepartmentConverter departmentConverter;
+
+    @Autowired
+    private DepartmentRepository departmentRepository;
 
 
     //List of all people
@@ -149,12 +163,46 @@ public List<Person> addPersonPassportList(@RequestBody List<Person> person){
     }
 
 
-
 //update person with passport details
 @PutMapping("/update/person-passport")
 public Person updatePersonPassport(@RequestBody Person person){
     personService.savePerson(person);
     return person;
 }
+
+
+//add new department
+@PostMapping("/add-department")
+public Department addNewDepartment(@RequestBody Department department){
+        departmentService.saveDepartment(department);
+        return department;
+}
+
+//update department
+@PutMapping("/update-depatment")
+public Department updateDepartment(@RequestBody Department department){
+        departmentService.saveDepartment(department);
+        return department;
+}
+
+//get department list
+@GetMapping("/get-department")
+public List<Department> showAllDepartment(){
+    List<Department> listDepartment = departmentService.getAllDepartment();
+    return listDepartment;
+}
+
+
+//find department by id
+@GetMapping("/find-department/{id}")
+public Department getDepartment(@PathVariable int id) {
+    Department department = departmentService.getDepartment(id);
+    if (department == null) {
+       throw new PersonException("There is no department with id = " +
+          id + " in Database");
+    }
+    return department;
+}
+
 
 }
