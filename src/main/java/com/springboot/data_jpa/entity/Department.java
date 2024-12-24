@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -29,10 +30,14 @@ public class Department {
     @Column(name = "staffs_num")
     private int staffs_num;
 
+    @ElementCollection
+    @CollectionTable(name=" department_production_line", joinColumns=@JoinColumn(name="department_id"))
+    private Set<ProductionLine> line;
+
 
     @JsonIgnore
-    @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH}, mappedBy = "department")
-    private List<Person> personlist;
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE}, mappedBy = "department")
+    private List<Person> personlist = new ArrayList<>();
 
     public void addPersonToDepartment(Person person){
         if (personlist == null){
@@ -41,17 +46,5 @@ public class Department {
         personlist.add(person);
         person.setDepartment(this);
     }
-
-    /*@JsonIgnore
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "department_id")
-    private List<Person> personList;
-
-    public void addPersonToDepartment(Person person){
-        if (personList == null){
-            personList = new ArrayList<>();
-        }
-        personList.add(person);
-    }*/
 
 }

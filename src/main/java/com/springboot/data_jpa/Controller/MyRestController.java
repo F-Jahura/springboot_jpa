@@ -1,14 +1,14 @@
 package com.springboot.data_jpa.Controller;
 
-import com.springboot.data_jpa.Converter.DepartmentConverter;
-import com.springboot.data_jpa.Converter.PersonConverter;
+import com.springboot.data_jpa.Converter.Converter;
 import com.springboot.data_jpa.dto.DepartmentDto;
+import com.springboot.data_jpa.dto.DepartmentDto_1;
 import com.springboot.data_jpa.dto.PersonDto;
+import com.springboot.data_jpa.dto.PersonDto_1;
 import com.springboot.data_jpa.entity.Department;
 import com.springboot.data_jpa.entity.Passport;
 import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.exception_handling.PersonException;
-import com.springboot.data_jpa.repository.DepartmentRepository;
 import com.springboot.data_jpa.repository.PassportRepository;
 import com.springboot.data_jpa.repository.PersonRepository;
 import com.springboot.data_jpa.service.DepartmentService;
@@ -30,7 +30,7 @@ public class MyRestController {
     @Autowired
     PersonRepository personRepository;
     @Autowired
-    PersonConverter converter;
+    Converter converter;
 
     @Autowired
     private PassportRepository passportRepository;
@@ -39,10 +39,7 @@ public class MyRestController {
     private DepartmentService departmentService;
 
     //@Autowired
-    //DepartmentConverter departmentConverter;
-
-    @Autowired
-    private DepartmentRepository departmentRepository;
+    //private DepartmentDto_1Repository departmentDto_1Repository;
 
 
     //List of all people
@@ -96,6 +93,7 @@ public class MyRestController {
 @PostMapping("/add-person")
     public Person addNewPerson(@RequestBody Person person){
         personService.savePerson(person);
+        //return converter.entityToDto(person);
         return person;
 }
 
@@ -111,7 +109,7 @@ public class MyRestController {
         return converter.entityToDto(findAgeOver30);
 }
 
-//find person by id
+//find person-passport-department by id
 @GetMapping("/find-person/{id}")
 public Person getPerson1(@PathVariable int id) {
     Person person = personService.getPerson(id);
@@ -133,25 +131,25 @@ public Person getPersonName(@PathVariable String name){
 }
 
 
-//find person with passport details by name
+//find person-passport-department details by name
 @GetMapping("/person-passport/by-name")
 public List<PersonDto> showAllDetailsByName(@RequestParam String name){
     List<Person> personList = personRepository.findAllByName(name);
         return converter.entityToDto(personList);
     }
 
-//add new person-passport
+//add new passport
 @PostMapping("/add-passport")
 public Passport addNewPassport(@RequestBody Passport passport){
         passportService.savePassport(passport);
     return passport;
 }
 
-//add new person with passport details
-@PostMapping("/add/person-passport")
-    public Person addPersonPassport(@RequestBody Person person){
-        personService.savePerson(person);
-        return person;
+//add new passport
+@PutMapping("/update-passport")
+public Passport updatePassport(@RequestBody Passport passport){
+    passportService.savePassport(passport);
+    return passport;
 }
 
 //add list of new person with passport details
@@ -179,7 +177,7 @@ public Department addNewDepartment(@RequestBody Department department){
 }
 
 //update department
-@PutMapping("/update-depatment")
+@PutMapping("/update-department")
 public Department updateDepartment(@RequestBody Department department){
         departmentService.saveDepartment(department);
         return department;
@@ -193,16 +191,53 @@ public List<Department> showAllDepartment(){
 }
 
 
-//find department by id
-@GetMapping("/find-department/{id}")
-public Department getDepartment(@PathVariable int id) {
-    Department department = departmentService.getDepartment(id);
+//find person-passport-department details by department-id
+@GetMapping("/find-department/full-details/{id}")
+public DepartmentDto showAllDetailsById(@PathVariable int id){
+        Department department = departmentService.getDepartment(id);
     if (department == null) {
-       throw new PersonException("There is no department with id = " +
-          id + " in Database");
+        throw new PersonException("There is no department with id = " +
+                id + " in Database");
     }
-    return department;
+        return converter.departmentToDto(department);
 }
 
+//////////////////////////////////////////////////////
+    @GetMapping("/find-department/details/{id}")
+    public DepartmentDto_1 showDetailsById(@PathVariable int id){
+        Department department = departmentService.getDepartment(id);
+        if (department == null) {
+            throw new PersonException("There is no department with id = " +
+                    id + " in Database");
+        }
+        //return departmentDto_1;
+        return converter.entityDepToDto_1(department);
+    }
+
+    @PostMapping("/add-department/in-person")
+    public DepartmentDto_1 save(@RequestBody DepartmentDto_1 dto_1, PersonDto_1 personDto_1){
+        Department department = converter.dto_1DepToEntity(dto_1);
+        Person person = converter.dtoPerToEntity_1(personDto_1);
+        department.addPersonToDepartment(person);
+        person.setDepartment(department);
+        department = departmentService.saveDepartment(department);
+
+
+        return converter.entityDepToDto_1(department);
+    }
+
+    ////////////////////////////////////////////////////
+
+    @PutMapping("/add-person-department")
+    public Person addDepartmentID(@RequestParam Department department, Person person){
+        //////////////////adding department_id in people table
+        person.setDepartment(department);
+        ////////////////////////////////////////////////
+        personService.savePerson(person);
+        departmentService.saveDepartment(department);
+
+        return person;
+    }
 
 }
+

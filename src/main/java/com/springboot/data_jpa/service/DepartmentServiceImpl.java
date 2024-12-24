@@ -1,12 +1,10 @@
 package com.springboot.data_jpa.service;
 
 import com.springboot.data_jpa.entity.Department;
-import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.transform.Source;
 import java.util.List;
 import java.util.Optional;
 
@@ -21,8 +19,9 @@ public class DepartmentServiceImpl implements DepartmentService{
     }
 
     @Override
-    public void saveDepartment(Department department) {
+    public Department saveDepartment(Department department) {
         departmentRepository.save(department);
+        return department;
     }
 
     @Override
@@ -35,4 +34,5 @@ public class DepartmentServiceImpl implements DepartmentService{
         else System.out.println("ID is not found");
         return department;
     }
+
 }

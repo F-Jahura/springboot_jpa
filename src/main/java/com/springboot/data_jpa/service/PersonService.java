@@ -1,5 +1,6 @@
 package com.springboot.data_jpa.service;
 
+import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public interface PersonService {
     public Person findByName(String name);
 
     public List<Person> savePersonList(List<Person> person);
+
 
 
     //public void savePersonDto(PersonDto personDto);

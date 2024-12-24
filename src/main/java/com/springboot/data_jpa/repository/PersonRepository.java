@@ -1,5 +1,6 @@
 package com.springboot.data_jpa.repository;
 
+import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -19,4 +20,6 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
             nativeQuery = true)
     public List<Person> findAllPersonOver30();
 
+
+    //public PersonDto savePersonDto(PersonDto personDto);
 }

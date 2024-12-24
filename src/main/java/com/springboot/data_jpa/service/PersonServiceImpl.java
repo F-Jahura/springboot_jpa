@@ -1,5 +1,7 @@
 package com.springboot.data_jpa.service;
 
+import com.springboot.data_jpa.Converter.Converter;
+import com.springboot.data_jpa.dto.PersonDto;
 import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +15,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Autowired
     private PersonRepository repository;
+    @Autowired
+    private Converter converter;
 
     //List of all people
     @Override
@@ -32,6 +36,8 @@ public class PersonServiceImpl implements PersonService {
     public void savePerson(Person person) {
         repository.save(person);
     }
+
+
 
     //delete person
     @Override
@@ -73,7 +79,6 @@ public class PersonServiceImpl implements PersonService {
     public List<Person> savePersonList(List<Person> person) {
         return repository.saveAll(person);
     }
-
 
 }
 
