@@ -61,8 +61,8 @@ public class Converter {
     public DepartmentDto departmentToDto(Department department){
         DepartmentDto departmentDto = new DepartmentDto();
         departmentDto.setTitle(department.getTitle());
-        departmentDto.setBuilding_num(department.getBuilding_num());
-        departmentDto.setStaffs_num(department.getStaffs_num());
+        departmentDto.setBuilding_num(department.getBuildingNum());
+        departmentDto.setStaffs_num(department.getStaffsNum());
         departmentDto.setPersonDtoList(entityToDto(department.getPersonlist()));
         return departmentDto;
     }
@@ -74,46 +74,46 @@ public class Converter {
 
     ////////////////////////////////////////////////////////////////////////////
 
-    public PersonDto_1 entityPerToDto_1(Person person){
-        PersonDto_1 dto_1 = new PersonDto_1();
+    public PersonDto1 entityPerToDto_1(Person person){
+        PersonDto1 dto_1 = new PersonDto1();
         dto_1.setId(person.getId());
         return dto_1;
     }
-    public List<PersonDto_1> entityPerToDto_1(List<Person> person){
+    public List<PersonDto1> entityPerToDto_1(List<Person> person){
         return person.stream().map(x -> entityPerToDto_1(x)).collect(Collectors.toList());
     }
 
 
-    public DepartmentDto_1 entityDepToDto_1(Department department){
-        DepartmentDto_1 departmentDto_1 = new DepartmentDto_1();
+    public DepartmentDto1 entityDepToDto_1(Department department){
+        DepartmentDto1 departmentDto_1 = new DepartmentDto1();
         departmentDto_1.setId(department.getId());
         departmentDto_1.setPersonDto_1List(entityPerToDto_1(department.getPersonlist()));
         return departmentDto_1;
     }
 
-    public List<DepartmentDto_1> entityDepToDto_1(List<Department> departments){
+    public List<DepartmentDto1> entityDepToDto_1(List<Department> departments){
         return departments.stream().map(x -> entityDepToDto_1(x)).collect(Collectors.toList());
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////
-    public Person dtoPerToEntity_1(PersonDto_1 personDto_1){
+    public Person dtoPerToEntity_1(PersonDto1 personDto_1){
         Person person = new Person();
         person.setId(personDto_1.getId());
         return person;
     }
-    public List<Person> dtoPerToEntity_1(List<PersonDto_1> personDto_1List){
+    public List<Person> dtoPerToEntity_1(List<PersonDto1> personDto_1List){
         return personDto_1List.stream().map(x -> dtoPerToEntity_1(x)).collect(Collectors.toList());
     }
 
 
-    public Department dto_1DepToEntity(DepartmentDto_1 departmentDto_1){
+    public Department dto_1DepToEntity(DepartmentDto1 departmentDto_1){
         Department department = new Department();
         department.setId(departmentDto_1.getId());
         department.setPersonlist(dtoPerToEntity_1(departmentDto_1.getPersonDto_1List()));
         return department;
     }
 
-    public List<Department> dto_1DepToEntity(List<DepartmentDto_1> departmentDto_1List){
+    public List<Department> dto_1DepToEntity(List<DepartmentDto1> departmentDto_1List){
         return departmentDto_1List.stream().map(x -> dto_1DepToEntity(x)).collect(Collectors.toList());
     }
 }

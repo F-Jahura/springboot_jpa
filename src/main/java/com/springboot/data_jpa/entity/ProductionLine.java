@@ -11,5 +11,11 @@ public class ProductionLine {
     private int equipments_count;
     private int square;
 
+    public int sumSquare(){
+        int sum = 0;
+            sum = sum + square;
+        return sum;
+
+    }
 
 }

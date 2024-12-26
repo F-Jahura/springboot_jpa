@@ -22,13 +22,14 @@ public class Department {
     private Integer id;
 
     @Column(name="title")
+
     private String title;
 
     @Column(name = "building_num")
-    private int building_num;
+    private int buildingNum;
 
     @Column(name = "staffs_num")
-    private int staffs_num;
+    private int staffsNum;
 
     @ElementCollection
     @CollectionTable(name=" department_production_line", joinColumns=@JoinColumn(name="department_id"))

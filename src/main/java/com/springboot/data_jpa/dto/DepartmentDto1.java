@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-public class DepartmentDto_1 {
+public class DepartmentDto1 {
     private Integer id;
-    private List<PersonDto_1> personDto_1List;
+    private List<PersonDto1> personDto_1List;
 }

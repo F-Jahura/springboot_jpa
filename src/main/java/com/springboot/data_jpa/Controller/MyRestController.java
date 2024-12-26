@@ -2,22 +2,24 @@ package com.springboot.data_jpa.Controller;
 
 import com.springboot.data_jpa.Converter.Converter;
 import com.springboot.data_jpa.dto.DepartmentDto;
-import com.springboot.data_jpa.dto.DepartmentDto_1;
+import com.springboot.data_jpa.dto.DepartmentDto1;
 import com.springboot.data_jpa.dto.PersonDto;
-import com.springboot.data_jpa.dto.PersonDto_1;
-import com.springboot.data_jpa.entity.Department;
-import com.springboot.data_jpa.entity.Passport;
-import com.springboot.data_jpa.entity.Person;
+import com.springboot.data_jpa.dto.PersonDto1;
+import com.springboot.data_jpa.entity.*;
 import com.springboot.data_jpa.exception_handling.PersonException;
-import com.springboot.data_jpa.repository.PassportRepository;
-import com.springboot.data_jpa.repository.PersonRepository;
+import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.DepartmentService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/api")
@@ -35,8 +37,15 @@ public class MyRestController {
     @Autowired
     private PassportRepository passportRepository;
 
+
     @Autowired
     private DepartmentService departmentService;
+
+    @Autowired
+    private DepartmentRepository departmentRepository;
+
+    @Autowired
+    private PerDepDtoRepository perDepDtoRepository;
 
     //@Autowired
     //private DepartmentDto_1Repository departmentDto_1Repository;
@@ -176,7 +185,7 @@ public Department addNewDepartment(@RequestBody Department department){
         return department;
 }
 
-//update department
+//update department (in postman: do not use third bracket for whole group as shown in "get-department" but use third bracket for "line" as shown in "get-department")
 @PutMapping("/update-department")
 public Department updateDepartment(@RequestBody Department department){
         departmentService.saveDepartment(department);
@@ -202,9 +211,35 @@ public DepartmentDto showAllDetailsById(@PathVariable int id){
         return converter.departmentToDto(department);
 }
 
-//////////////////////////////////////////////////////
+
+//adding department_id in people table by id
+@PostMapping("/add/department/in-person")
+public PerDepDto saveDepartment(@RequestBody PerDepDto perDepDto){
+    perDepDtoRepository.save(perDepDto);
+    return perDepDto;
+}
+
+//getting department_id by person_id
+@GetMapping("/get/department-by-person/{id}")
+public Optional<PerDepDto> getPersonByDepartment(@PathVariable int id){
+    Optional<PerDepDto> perDepDto = perDepDtoRepository.findById(id);
+    return perDepDto;
+
+}
+
+//get sum square from department_production_line by department_id
+@GetMapping("/get-sum-square/{depID}")
+public Integer getSumSquare(@PathVariable int depID){
+        int sumSquare = departmentRepository.selectTotals(depID);
+    //int sumSquare = departmentRepository.selectTotals();
+
+    return sumSquare;
+}
+
+
+    //////////////////////////////////////////////////////
     @GetMapping("/find-department/details/{id}")
-    public DepartmentDto_1 showDetailsById(@PathVariable int id){
+    public DepartmentDto1 showDetailsById(@PathVariable int id){
         Department department = departmentService.getDepartment(id);
         if (department == null) {
             throw new PersonException("There is no department with id = " +
@@ -215,7 +250,7 @@ public DepartmentDto showAllDetailsById(@PathVariable int id){
     }
 
     @PostMapping("/add-department/in-person")
-    public DepartmentDto_1 save(@RequestBody DepartmentDto_1 dto_1, PersonDto_1 personDto_1){
+    public DepartmentDto1 save(@RequestBody DepartmentDto1 dto_1, PersonDto1 personDto_1){
         Department department = converter.dto_1DepToEntity(dto_1);
         Person person = converter.dtoPerToEntity_1(personDto_1);
         department.addPersonToDepartment(person);
@@ -228,16 +263,6 @@ public DepartmentDto showAllDetailsById(@PathVariable int id){
 
     ////////////////////////////////////////////////////
 
-    @PutMapping("/add-person-department")
-    public Person addDepartmentID(@RequestParam Department department, Person person){
-        //////////////////adding department_id in people table
-        person.setDepartment(department);
-        ////////////////////////////////////////////////
-        personService.savePerson(person);
-        departmentService.saveDepartment(department);
-
-        return person;
-    }
 
 }
 
