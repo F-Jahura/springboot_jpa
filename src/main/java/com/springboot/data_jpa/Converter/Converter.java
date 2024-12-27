@@ -74,7 +74,7 @@ public class Converter {
 
     ////////////////////////////////////////////////////////////////////////////
 
-    public PersonDto1 entityPerToDto_1(Person person){
+    /*public PersonDto1 entityPerToDto_1(Person person){
         PersonDto1 dto_1 = new PersonDto1();
         dto_1.setId(person.getId());
         return dto_1;
@@ -93,10 +93,10 @@ public class Converter {
 
     public List<DepartmentDto1> entityDepToDto_1(List<Department> departments){
         return departments.stream().map(x -> entityDepToDto_1(x)).collect(Collectors.toList());
-    }
+    }*/
 
     ////////////////////////////////////////////////////////////////////////////////////////
-    public Person dtoPerToEntity_1(PersonDto1 personDto_1){
+   /* public Person dtoPerToEntity_1(PersonDto1 personDto_1){
         Person person = new Person();
         person.setId(personDto_1.getId());
         return person;
@@ -115,5 +115,5 @@ public class Converter {
 
     public List<Department> dto_1DepToEntity(List<DepartmentDto1> departmentDto_1List){
         return departmentDto_1List.stream().map(x -> dto_1DepToEntity(x)).collect(Collectors.toList());
-    }
+    }*/
 }

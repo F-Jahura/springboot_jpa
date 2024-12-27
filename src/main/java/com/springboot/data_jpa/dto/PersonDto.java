@@ -1,10 +1,5 @@
 package com.springboot.data_jpa.dto;
 
-import com.springboot.data_jpa.entity.Passport;
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Column;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data

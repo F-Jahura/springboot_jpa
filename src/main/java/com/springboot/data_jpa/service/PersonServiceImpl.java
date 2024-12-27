@@ -1,8 +1,10 @@
 package com.springboot.data_jpa.service;
 
 import com.springboot.data_jpa.Converter.Converter;
-import com.springboot.data_jpa.dto.PersonDto;
+import com.springboot.data_jpa.dto.UpdatePersonDepartmentRequest;
+import com.springboot.data_jpa.entity.Department;
 import com.springboot.data_jpa.entity.Person;
+import com.springboot.data_jpa.repository.DepartmentRepository;
 import com.springboot.data_jpa.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ public class PersonServiceImpl implements PersonService {
 
     @Autowired
     private PersonRepository repository;
+    @Autowired
+    private DepartmentRepository departmentRepository;
     @Autowired
     private Converter converter;
 
@@ -78,6 +82,23 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<Person> savePersonList(List<Person> person) {
         return repository.saveAll(person);
+    }
+
+    @Override
+    public void updateDepartment(UpdatePersonDepartmentRequest updatePersonDepartmentRequest) {
+        Person person = null;
+        Optional<Person> optional = repository.findById(updatePersonDepartmentRequest.getPersonID());
+        person = optional.get();
+        Department department = null;
+        Optional<Department> optional1 = departmentRepository.findById(updatePersonDepartmentRequest.getDepartmentID());
+        department = optional1.get();
+        person.setDepartment(department);
+        repository.save(person);
+    }
+
+    @Override
+    public void updateDepartment1(int personID, int DepartmentID){
+
     }
 
 }
