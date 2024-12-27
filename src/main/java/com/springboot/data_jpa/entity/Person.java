@@ -31,8 +31,8 @@ public class Person {
     @Column(name = "patronymic")
     private String patronymic;
 
-    @Column(name="age")
-    private int age;
+    @Column(name="birthday")
+    private LocalDate birthday;
 
     //@Temporal(TemporalType.TIMESTAMP)
     private LocalDate creation_date;

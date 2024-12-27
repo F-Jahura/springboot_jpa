@@ -8,10 +8,12 @@ import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.DepartmentService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
+import jakarta.persistence.criteria.CriteriaBuilder;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -75,14 +77,14 @@ public class MyRestController {
 
 //find person by name and age
 @GetMapping("/person/name-age")
-    public List<Person> personNameAge(@RequestParam String name, @RequestParam Integer age){
-        return personService.findAllByNameAndAge(name, age);
+    public List<Person> personNameAge(@RequestParam String name, @RequestParam LocalDate birthday){
+        return personService.findAllByNameAndBirthday(name, birthday);
     }
 
 //find person by age
 @GetMapping("/person/get-age")
-    public List<Person> showPersonByAge(@RequestParam Integer age){
-        List<Person> personList = personService.findAllByAge(age);
+    public List<Person> showPersonByAge(@RequestParam LocalDate birthday){
+        List<Person> personList = personService.findAllByBirthday(birthday);
         return personList;
 }
 
@@ -201,15 +203,15 @@ public DepartmentDto showAllDetailsById(@PathVariable int id){
 
 
 //adding department_id in people table by id
-@PostMapping("/add/department/in-person/")
+@PostMapping("/add/department/in-person")
 public UpdatePersonDepartmentRequest saveDepartment(@RequestBody UpdatePersonDepartmentRequest request){
         personService.updateDepartment(request);
         return request;
 }
 
-@PostMapping("/add/department/in-person-query")
-public void saveDepartmentID(@RequestBody UpdatePersonDepartmentRequest request){
-        personRepository.updateDepartment(request);
+@GetMapping("/add/department/in-person-query")
+public void saveDepartmentID(@RequestParam Integer id, @RequestParam Integer department_id){
+      personRepository.updateDepartmentByQuery(id,department_id);
 }
 
 

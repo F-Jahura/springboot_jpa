@@ -3,7 +3,9 @@ package com.springboot.data_jpa.service;
 import com.springboot.data_jpa.dto.UpdatePersonDepartmentRequest;
 import com.springboot.data_jpa.entity.Person;
 
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Locale;
 
 public interface PersonService {
     public List<Person> getAllPeople();
@@ -11,8 +13,8 @@ public interface PersonService {
     public List<Person> findAllByName(String name);
     public void savePerson(Person person);
     public void deletePerson(int id);
-    public List<Person> findAllByNameAndAge(String name, Integer age);
-    public List<Person> findAllByAge(Integer age);
+    public List<Person> findAllByNameAndBirthday(String name, LocalDate birthday);
+    public List<Person> findAllByBirthday(LocalDate birhtday);
 
     public Person getPerson(int id);
     public Person findByName(String name);

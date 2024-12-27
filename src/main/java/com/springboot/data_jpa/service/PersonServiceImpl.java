@@ -9,6 +9,7 @@ import com.springboot.data_jpa.repository.PersonRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -51,14 +52,14 @@ public class PersonServiceImpl implements PersonService {
 
     //find person by age
     @Override
-    public List<Person> findAllByAge(Integer age) {
-        return repository.findAllByAge(age);
+    public List<Person> findAllByBirthday(LocalDate birhtday) {
+        return repository.findAllByBirthday(birhtday);
     }
 
     //find person by name and age
     @Override
-    public List<Person> findAllByNameAndAge(String name, Integer age) {
-        return repository.findAllByNameAndAge(name, age);
+    public List<Person> findAllByNameAndBirthday(String name, LocalDate birthday) {
+        return repository.findAllByNameAndBirthday(name, birthday);
     }
 
     //find person by id
