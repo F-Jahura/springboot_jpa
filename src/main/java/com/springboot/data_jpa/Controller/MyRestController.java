@@ -8,14 +8,11 @@ import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.DepartmentService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
-import jakarta.persistence.criteria.CriteriaBuilder;
-import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -223,6 +220,12 @@ public Integer getSumSquare(@PathVariable int depID){
 
     return sumSquare;
 }
+
+/*@PostMapping("/add-person/validation")
+public @Valid PersonDtoValidation personValidation(@Valid @RequestBody PersonDtoValidation personDtoValidation){
+        personService.savePerson(personDtoValidation.toPerson());
+        return personDtoValidation;
+}*/
 
 
     //////////////////////////////////////////////////////
