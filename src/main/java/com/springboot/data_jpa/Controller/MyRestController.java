@@ -221,12 +221,6 @@ public Integer getSumSquare(@PathVariable int depID){
     return sumSquare;
 }
 
-/*@PostMapping("/add-person/validation")
-public @Valid PersonDtoValidation personValidation(@Valid @RequestBody PersonDtoValidation personDtoValidation){
-        personService.savePerson(personDtoValidation.toPerson());
-        return personDtoValidation;
-}*/
-
 
     //////////////////////////////////////////////////////
     /*@GetMapping("/find-department/details/{id}")
