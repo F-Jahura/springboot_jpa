@@ -8,7 +8,10 @@ import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.DepartmentService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -219,6 +222,12 @@ public Integer getSumSquare(@PathVariable int depID){
     //int sumSquare = departmentRepository.selectTotals();
 
     return sumSquare;
+}
+
+@PostMapping("/person-validation")
+public ResponseEntity<PersonValidation> validPerson(@Valid @RequestBody PersonValidation personValidation){
+        personService.savePerson(personValidation.toPerson());
+        return new ResponseEntity<>(personValidation, HttpStatus.CREATED);
 }
 
 
