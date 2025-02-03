@@ -8,6 +8,7 @@ import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.DepartmentService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -87,6 +88,7 @@ public class MyRestController {
 @GetMapping("/person/get-age")
     public List<Person> showPersonByAge(@RequestParam LocalDate birthday){
         List<Person> personList = personService.findAllByBirthday(birthday);
+    //System.out.println(personList);
         return personList;
 }
 
@@ -110,6 +112,7 @@ public class MyRestController {
         return converter.entityToDto(findAgeOver30);
 }
 
+
 //find person-passport-department by id
 @GetMapping("/find-person/{id}")
 public Person getPerson1(@PathVariable int id) {
@@ -122,7 +125,7 @@ public Person getPerson1(@PathVariable int id) {
 }
 
 @GetMapping("/find-name/{name}")
-public Person getPersonName(@PathVariable String name){
+public Person getPersonName(@PathVariable String name, HttpServletRequest request){
         Person person = personService.findByName(name);
     if (person == null) {
         throw new PersonException("There is no person with name = " +
@@ -231,6 +234,11 @@ public ResponseEntity<PersonValidation> validPerson(@Valid @RequestBody PersonVa
         personService.savePerson(personValidation.toPerson());
         return new ResponseEntity<>(personValidation, HttpStatus.CREATED);
 }
+
+    public void findAgeExample(){
+        List<Person> findAgeOver30 = personRepository.findAllPersonOver30();
+        System.out.println(findAgeOver30);
+    }
 
 
     //////////////////////////////////////////////////////

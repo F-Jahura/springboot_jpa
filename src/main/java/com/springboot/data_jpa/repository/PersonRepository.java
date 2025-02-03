@@ -21,9 +21,14 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
     public List<Person> findAllByBirthday(LocalDate birthday);
 
     @Query(
-            value = "SELECT * FROM people p WHERE p.age >= 30",
+            value = "SELECT * FROM people p WHERE p.age = 30",
             nativeQuery = true)
     public List<Person> findAllPersonOver30();
+
+    @Query(
+            value = "SELECT * FROM people p WHERE p.patronymic IS NULL",
+            nativeQuery = true)
+    public List<Person> findAllPersonWithoutPatronymic();
 
     @Transactional
     @Modifying
