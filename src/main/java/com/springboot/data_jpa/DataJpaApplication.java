@@ -35,13 +35,14 @@ public class DataJpaApplication {
 		SpringApplication.run(DataJpaApplication.class, args);
 	}
 
-	@Scheduled(fixedDelay = 10000)
+	//Need to open
+	/*@Scheduled(fixedDelay = 10000)
 	public void schedulePersonPatronymicRemindingTask(){
 		System.out.println("\nPerson without patronymic: \n");
 		for (Person person : personRepository.findAllPersonWithoutPatronymic()){
 			System.out.println(person.toString() + System.currentTimeMillis() / 10000);
 		}
-	}
+	}*/
 
 	/*@Bean
 	public CommandLineRunner personDemo(){

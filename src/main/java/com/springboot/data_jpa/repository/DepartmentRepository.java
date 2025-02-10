@@ -13,6 +13,10 @@ import java.util.Optional;
 
 public interface DepartmentRepository extends JpaRepository<Department, Integer> {
 
+    @Query(
+            value = "SELECT COUNT(title) FROM department", nativeQuery = true)
+    long count();
+
   //option 1
    @Query(
             value = "SELECT SUM(square) FROM department_production_line WHERE department_id=?1 GROUP BY department_id",

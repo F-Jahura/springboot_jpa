@@ -63,7 +63,7 @@ public class Converter {
         departmentDto.setTitle(department.getTitle());
         departmentDto.setBuilding_num(department.getBuildingNum());
         departmentDto.setStaffs_num(department.getStaffsNum());
-        departmentDto.setPersonDtoList(entityToDto(department.getPersonlist()));
+        departmentDto.setPersonDtoList(entityToDto(department.getPersonlist())); //NEED TO OPEN
         return departmentDto;
     }
 

@@ -32,13 +32,13 @@ public class Department {
     private int staffsNum;
 
     //NEED TO OPEN BELOW CLOSE
-    /////////////////////////////////////////////
-    /*@ElementCollection
+    ////////////////////////////////
+    @ElementCollection
     @CollectionTable(name=" department_production_line", joinColumns=@JoinColumn(name="department_id"))
-    private Set<ProductionLine> line;*/
+    private Set<ProductionLine> line;
 
 
-    /*@JsonIgnore
+    @JsonIgnore
     @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.DETACH, CascadeType.REFRESH, CascadeType.MERGE}, mappedBy = "department")
     private List<Person> personlist = new ArrayList<>();
 
@@ -48,7 +48,7 @@ public class Department {
         }
         personlist.add(person);
         person.setDepartment(this);
-    }*/
+    }
 
     /////////////////////////////////////////////////
 

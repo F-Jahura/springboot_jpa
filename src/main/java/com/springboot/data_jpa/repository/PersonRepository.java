@@ -21,14 +21,17 @@ public interface PersonRepository extends JpaRepository<Person, Integer> {
     public List<Person> findAllByBirthday(LocalDate birthday);
 
     @Query(
-            value = "SELECT * FROM people p WHERE p.age = 30",
+            value = "SELECT * FROM people p WHERE p.age > 1995-01-01",
             nativeQuery = true)
     public List<Person> findAllPersonOver30();
 
-    @Query(
+    //this is necessary to work with scheduled. If open below Query needs to close line, personList and addPersonToDepartment method in class Department and
+    //need to close this one from class Converter:  departmentDto.setPersonDtoList(entityToDto(department.getPersonlist()))
+    // Also need to open this method: schedulePersonPatronymicRemindingTask() from DataJpaApllication.java
+    /*@Query(
             value = "SELECT * FROM people p WHERE p.patronymic IS NULL",
             nativeQuery = true)
-    public List<Person> findAllPersonWithoutPatronymic();
+    public List<Person> findAllPersonWithoutPatronymic();*/
 
     @Transactional
     @Modifying
