@@ -1,6 +1,9 @@
 package com.springboot.data_jpa.exception_handling;
 
+import com.springboot.data_jpa.entity.EmailDetails;
+import com.springboot.data_jpa.service.EmailService;
 import jakarta.validation.ConstraintViolationException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -18,6 +21,8 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class PersonGlobalExceptionHandler extends ResponseEntityExceptionHandler {
+    @Autowired
+    EmailService emailService;
 
     @Override
     protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException exception, HttpHeaders headers,
@@ -29,6 +34,7 @@ public class PersonGlobalExceptionHandler extends ResponseEntityExceptionHandler
                 .map(DefaultMessageSourceResolvable::getDefaultMessage)
                 .collect(Collectors.toList());
         body.put("errors ", errors);
+        emailService.sendSimpleMailGet();
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 
@@ -37,6 +43,7 @@ public class PersonGlobalExceptionHandler extends ResponseEntityExceptionHandler
     public ResponseEntity<PersonIncorrectData> handleException(PersonException exception) {
         PersonIncorrectData data = new PersonIncorrectData();
         data.setInfo(exception.getMessage());
+        emailService.sendSimpleMailGet();
         return new ResponseEntity<>(data, HttpStatus.NOT_FOUND);
     }
 
@@ -44,6 +51,7 @@ public class PersonGlobalExceptionHandler extends ResponseEntityExceptionHandler
     public ResponseEntity<PersonIncorrectData> handleException(Exception exception) {
         PersonIncorrectData data = new PersonIncorrectData();
         data.setInfo(exception.getMessage());
+        emailService.sendSimpleMailGet();
         return new ResponseEntity<>(data, HttpStatus.BAD_REQUEST);
     }
 
@@ -55,6 +63,7 @@ public class PersonGlobalExceptionHandler extends ResponseEntityExceptionHandler
         Map<String, List<String>> result = new HashMap<>();
 
         result.put("errors: ", errors);
+        emailService.sendSimpleMailGet();
         return new ResponseEntity<>(result, HttpStatus.BAD_REQUEST);
     }
 }

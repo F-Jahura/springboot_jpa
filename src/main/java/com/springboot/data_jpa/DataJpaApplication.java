@@ -7,33 +7,38 @@ import com.springboot.data_jpa.entity.Person;
 import com.springboot.data_jpa.repository.DepartmentRepository;
 import com.springboot.data_jpa.repository.PassportRepository;
 import com.springboot.data_jpa.repository.PersonRepository;
+import jakarta.mail.MessagingException;
+import jakarta.mail.internet.MimeMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
+import java.io.IOException;
 import java.util.Formattable;
 import java.util.List;
 
 @Configuration
 @EnableScheduling
 @SpringBootApplication
-public class DataJpaApplication {
+public class DataJpaApplication{
 
 	@Autowired
 	PassportRepository passportRepository;
 	@Autowired
 	PersonRepository personRepository;
 
-
-
 	public static void main(String[] args) {
 		SpringApplication.run(DataJpaApplication.class, args);
 	}
+
+
 
 	//Need to open
 	/*@Scheduled(fixedDelay = 10000)

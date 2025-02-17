@@ -6,6 +6,7 @@ import com.springboot.data_jpa.entity.*;
 import com.springboot.data_jpa.exception_handling.PersonException;
 import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.DepartmentService;
+import com.springboot.data_jpa.service.EmailService;
 import com.springboot.data_jpa.service.PassportService;
 import com.springboot.data_jpa.service.PersonService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -16,19 +17,20 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
+
 
 @Validated
 @RestController
 @Slf4j
 @RequestMapping("/api")
 public class MyRestController {
-
     @Autowired
     private PersonService personService;
     @Autowired
@@ -48,6 +50,8 @@ public class MyRestController {
     @Autowired
     private DepartmentRepository departmentRepository;
 
+    @Autowired
+    EmailService emailService;
 
     //List of all people
     @GetMapping("/person")
@@ -61,10 +65,6 @@ public class MyRestController {
     //public Person getPerson(@RequestParam String name){
     public List<Person> showAllPersonByName(@RequestParam String name){
          List<Person> personList = personService.findAllByName(name);
-         /*if (personList == null){
-             throw new PersonException("There is no person with name = " +
-                     name + " in Database");
-         }*/
          return personList;
 }
 
@@ -123,8 +123,9 @@ public class MyRestController {
 public Person getPerson1(@PathVariable int id) {
     Person person = personService.getPerson(id);
     if (person == null) {
+        //emailService.sendSimpleMailGet();
         throw new PersonException("There is no person with id = " +
-                id + " in Database");
+                id + " in Database.");
     }
     return person;
 }
@@ -133,8 +134,9 @@ public Person getPerson1(@PathVariable int id) {
 public Person getPersonName(@PathVariable String name, HttpServletRequest request){
         Person person = personService.findByName(name);
     if (person == null) {
+        //emailService.sendSimpleMailGet();
         throw new PersonException("There is no person with name = " +
-                name + " in Database");
+                name + " in Database.");
     }
         return person;
 }
@@ -246,7 +248,20 @@ public ResponseEntity<PersonValidation> validPerson(@Valid @RequestBody PersonVa
         System.out.println(findAgeOver30);
     }
 
-    @GetMapping("/logback")
+    //write email body, subject and to whom in json
+    @PostMapping("/sendMail")
+    public String sendEmail(@RequestBody EmailDetails details){
+        String status = emailService.sendSimpleMail(details);
+        return status;
+    }
+
+    //email body, subject and to whom is ready. Just need to send.
+    @GetMapping("/sendMailGet")
+    public void sendEmailGet(){
+        emailService.sendSimpleMailGet();
+    }
+
+    /*@GetMapping("/logback")
     public String index(){
         log.trace("A trace message");
         log.debug("A debug message");
@@ -254,7 +269,7 @@ public ResponseEntity<PersonValidation> validPerson(@Valid @RequestBody PersonVa
         log.warn("A warn message");
         log.error("An error message");
         return "Howdy, check out the logs to get output....";
-    }
+    }*/
 
 
     //////////////////////////////////////////////////////
