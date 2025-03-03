@@ -1,9 +1,7 @@
 package com.springboot.data_jpa.Converter;
 
 import com.springboot.data_jpa.dto.*;
-import com.springboot.data_jpa.entity.Department;
-import com.springboot.data_jpa.entity.Passport;
-import com.springboot.data_jpa.entity.Person;
+import com.springboot.data_jpa.entity.*;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -29,6 +27,39 @@ public class Converter {
     }
 
     /////////////////////////////////////////////////////////////////////////
+    public OrderDto orderToOrderDto(Order order){
+        OrderDto orderDto = new OrderDto();
+        orderDto.setOrderNumber(order.getOrderNumber());
+        orderDto.setCreationDate(order.getCreationDate());
+        orderDto.setDescription(order.getDescription());
+        orderDto.setSum(order.getSum());
+        return orderDto;
+    }
+
+    public List<OrderDto> orderToOrderDto(List<Order> order){
+        return order.stream().map(x -> orderToOrderDto(x)).collect(Collectors.toList());
+    }
+
+    public ClientDto clientToClientDto(Client client){
+        ClientDto clientDto = new ClientDto();
+        clientDto.setRegionCode(client.getRegionCode());
+        clientDto.setAreaName(client.getAreaName());
+        clientDto.setLocalityName(client.getLocalityName());
+        clientDto.setStreet(client.getStreet());
+        clientDto.setHouseNumber(client.getHouseNumber());
+        clientDto.setBuildingNumber(client.getBuildingNumber());
+        clientDto.setOfficeNumber(client.getOfficeNumber());
+        clientDto.setOrderDtoList(orderToOrderDto(client.getOrderList()));
+        return clientDto;
+    }
+
+    public List<ClientDto> clientToClientDto(List<Client> clients){
+        return clients.stream().map(x -> clientToClientDto(x)).collect(Collectors.toList());
+    }
+
+    //////////////////////////////////////////////////////////////////////
+
+    //////////////////////////////////////////////////////////////////////
     public PersonDto entityToDto(Person person){
         PersonDto dto = new PersonDto();
         dto.setName(person.getName());

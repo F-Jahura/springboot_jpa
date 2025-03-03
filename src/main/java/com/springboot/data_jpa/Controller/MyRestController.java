@@ -5,14 +5,12 @@ import com.springboot.data_jpa.dto.*;
 import com.springboot.data_jpa.entity.*;
 import com.springboot.data_jpa.exception_handling.PersonException;
 import com.springboot.data_jpa.repository.*;
-import com.springboot.data_jpa.service.DepartmentService;
-import com.springboot.data_jpa.service.EmailService;
-import com.springboot.data_jpa.service.PassportService;
-import com.springboot.data_jpa.service.PersonService;
+import com.springboot.data_jpa.service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
+import org.aspectj.weaver.ast.Or;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -52,6 +50,12 @@ public class MyRestController {
 
     @Autowired
     EmailService emailService;
+
+    @Autowired
+    private ClientService clientService;
+
+    @Autowired
+    private OrderService orderService;
 
     //List of all people
     @GetMapping("/person")
@@ -144,10 +148,10 @@ public Person getPersonName(@PathVariable String name, HttpServletRequest reques
 
 //find person-passport-department details by name
 @GetMapping("/person-passport/by-name")
-public List<PersonDto> showAllDetailsByName(@RequestParam String name){
+public List<PersonDto> showAllDetailsByName(@RequestParam String name) {
     List<Person> personList = personRepository.findAllByName(name);
-        return converter.entityToDto(personList);
-    }
+    return converter.entityToDto(personList);
+}
 
 //add new passport
 @PostMapping("/add-passport")
@@ -163,7 +167,8 @@ public Passport updatePassport(@RequestBody Passport passport){
     return passport;
 }
 
-//add list of new person with passport details
+//add list of new person with passport details0.
+
 @PostMapping("/add/list/person-passport")
 public List<Person> addPersonPassportList(@RequestBody List<Person> person){
     List<Person> personList = personService.savePersonList(person);
@@ -242,6 +247,83 @@ public ResponseEntity<PersonValidation> validPerson(@Valid @RequestBody PersonVa
         personService.savePerson(personValidation.toPerson());
         return new ResponseEntity<>(personValidation, HttpStatus.CREATED);
 }
+//Client_Order part start
+@PostMapping("/add-client")
+public Client addNewClient(@RequestBody Client client){
+        clientService.saveClient(client);
+        return client;
+}
+
+    @PutMapping("/update-client")
+    public Client updateClientDto(@RequestBody Client client){
+        clientService.saveClient(client);
+        return client;
+    }
+
+/*@PostMapping("/add-clientDto")
+public ResponseEntity<ClientDto> addClientDto(@RequestBody ClientDto clientDto){
+        clientService.saveClient(clientDto.toClient());
+        return new ResponseEntity<>(clientDto, HttpStatus.CREATED);
+}*/
+
+@GetMapping("/find-client/{id}")
+public ClientDto getClientById(@PathVariable int id) {
+    Client client = clientService.getClient(id);
+    if (client == null) {
+       throw new PersonException("There is no client with id = " +
+       id + " in Database.");
+    }
+
+    return converter.clientToClientDto(client);
+}
+
+@GetMapping("/get-client")
+public List<ClientDto> showAllClient(){
+    List<Client> allClient = clientService.getAllClient();
+    return converter.clientToClientDto(allClient);
+}
+
+@DeleteMapping("/delete-client/{id}")
+public String deleteClient(@PathVariable int id){
+    clientService.deleteClient(id);
+    return "Client with ID = " + id + " was deleted";
+}
+
+@PostMapping("/add-order")
+public Order addNewOrder(@RequestBody Order order){
+        orderService.saveOrder(order);
+        return order;
+}
+
+@PutMapping("/update-order")
+public Order updateOrder(@RequestBody Order order){
+    orderService.saveOrder(order);
+    return order;
+}
+
+@GetMapping("/find-order/{id}")
+public Order getOrder(@PathVariable int id) {
+    Order order = orderService.getOrder(id);
+    if (order == null) {
+        throw new PersonException("There is no order with id = " +
+                id + " in Database.");
+    }
+    return order;
+}
+
+@GetMapping("/get-order")
+public List<Order> showAllOrder(){
+    List<Order> allOrder = orderService.getAllOrder();
+    return allOrder;
+}
+
+@DeleteMapping("/delete-order/{id}")
+public String deleteOrder(@PathVariable int id){
+    orderService.deleteOrder(id);
+    return "Order with ID = " + id + " was deleted";
+}
+
+//Client-Order part end
 
     public void findAgeExample(){
         List<Person> findAgeOver30 = personRepository.findAllPersonOver30();
