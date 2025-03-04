@@ -30,7 +30,7 @@ public class Order {
     @Column(name = "sum")
     private int sum;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.DETACH, CascadeType.REFRESH})
     @JoinColumn(name = "client_id")
     private Client client;
 

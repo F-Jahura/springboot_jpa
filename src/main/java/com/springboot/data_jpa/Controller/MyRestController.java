@@ -254,34 +254,42 @@ public Client addNewClient(@RequestBody Client client){
         return client;
 }
 
-    @PutMapping("/update-client")
-    public Client updateClientDto(@RequestBody Client client){
-        clientService.saveClient(client);
-        return client;
-    }
-
-/*@PostMapping("/add-clientDto")
-public ResponseEntity<ClientDto> addClientDto(@RequestBody ClientDto clientDto){
-        clientService.saveClient(clientDto.toClient());
-        return new ResponseEntity<>(clientDto, HttpStatus.CREATED);
-}*/
-
 @GetMapping("/find-client/{id}")
-public ClientDto getClientById(@PathVariable int id) {
+public Client getClientById(@PathVariable int id) {
     Client client = clientService.getClient(id);
     if (client == null) {
        throw new PersonException("There is no client with id = " +
        id + " in Database.");
     }
 
-    return converter.clientToClientDto(client);
+    return client;
 }
 
-@GetMapping("/get-client")
+@PutMapping("/update-client")
+public Client updateClientDto(@RequestBody Client client){
+    clientService.saveClient(client);
+    return client;
+ }
+
+ @GetMapping("/get-client")
+ public List<Client> showAllClient() {
+     List<Client> allClient = clientService.getAllClient();
+     return allClient;
+ }
+
+
+/*@GetMapping("/get-client")
 public List<ClientDto> showAllClient(){
     List<Client> allClient = clientService.getAllClient();
     return converter.clientToClientDto(allClient);
+    }
+
+ @PostMapping("/add-OrderDtoID")
+public ResponseEntity<ClientDto> addClientDto(@RequestBody ClientDto clientDto){
+        clientService.saveClient(clientDto.toClient());
+        return new ResponseEntity<>(clientDto, HttpStatus.CREATED);
 }
+ */
 
 @DeleteMapping("/delete-client/{id}")
 public String deleteClient(@PathVariable int id){
@@ -294,21 +302,36 @@ public Order addNewOrder(@RequestBody Order order){
         orderService.saveOrder(order);
         return order;
 }
-
-@PutMapping("/update-order")
-public Order updateOrder(@RequestBody Order order){
-    orderService.saveOrder(order);
-    return order;
+@PostMapping("/add-client/in-order")
+public UpdateClientOrder saveCLient(@RequestBody UpdateClientOrder clientOrder){
+    orderService.updateOrder(clientOrder);
+    return clientOrder;
 }
 
 @GetMapping("/find-order/{id}")
 public Order getOrder(@PathVariable int id) {
     Order order = orderService.getOrder(id);
     if (order == null) {
-        throw new PersonException("There is no order with id = " +
+       throw new PersonException("There is no order with id = " +
+       id + " in Database.");
+        }
+    return order;
+}
+@PutMapping("/update-order")
+public Order updateOrder(@RequestBody Order order){
+    orderService.saveOrder(order);
+    return order;
+}
+
+@GetMapping("/find-client-order/{id}")
+public ClientDto getClientDtoById(@PathVariable int id) {
+    Client client = clientService.getClient(id);
+    if (client == null) {
+        throw new PersonException("There is no client with id = " +
                 id + " in Database.");
     }
-    return order;
+
+    return converter.clientToClientDto(client);
 }
 
 @GetMapping("/get-order")

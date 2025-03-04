@@ -1,24 +1,24 @@
-2025-03-03 16:25:17,305 INFO Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
-2025-03-03 16:25:17,345 INFO StartupInfoLogger [main] Starting DataJpaApplication using Java 17.0.8.1 with PID 11784 (C:\Users\dimab\Desktop\java-course\part6\maven-2nd-step\springboot_jpa\target\classes started by dimab in C:\Users\dimab\Desktop\java-course\part6\maven-2nd-step\springboot_jpa)
-2025-03-03 16:25:17,356 INFO SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
-2025-03-03 16:25:18,140 INFO RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-03-03 16:25:18,231 INFO RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 78 ms. Found 5 JPA repository interfaces.
-2025-03-03 16:25:18,883 INFO TomcatWebServer [main] Tomcat initialized with port 8080 (http)
-2025-03-03 16:25:18,895 INFO DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
-2025-03-03 16:25:18,901 INFO DirectJDKLog [main] Starting service [Tomcat]
-2025-03-03 16:25:18,902 INFO DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.31]
-2025-03-03 16:25:18,962 INFO DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
-2025-03-03 16:25:18,964 INFO ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1546 ms
-2025-03-03 16:25:19,142 INFO HikariDataSource [main] HikariPool-1 - Starting...
-2025-03-03 16:25:19,321 INFO HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@403364e9
-2025-03-03 16:25:19,323 INFO HikariDataSource [main] HikariPool-1 - Start completed.
-2025-03-03 16:25:19,368 INFO LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-03-03 16:25:19,434 INFO Version [main] HHH000412: Hibernate ORM core version 6.5.3.Final
-2025-03-03 16:25:19,470 INFO RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
-2025-03-03 16:25:19,795 INFO SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-03-03 16:25:20,808 INFO JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-03-03 16:25:20,810 INFO AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-03-03 16:25:20,947 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:13,788 INFO Version [background-preinit] HV000001: Hibernate Validator 8.0.1.Final
+2025-03-04 13:59:13,842 INFO StartupInfoLogger [main] Starting DataJpaApplication using Java 17.0.8.1 with PID 9712 (C:\Users\dimab\Desktop\java-course\part6\maven-2nd-step\springboot_jpa\target\classes started by dimab in C:\Users\dimab\Desktop\java-course\part6\maven-2nd-step\springboot_jpa)
+2025-03-04 13:59:13,849 INFO SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2025-03-04 13:59:14,679 INFO RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-04 13:59:14,773 INFO RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 81 ms. Found 5 JPA repository interfaces.
+2025-03-04 13:59:15,454 INFO TomcatWebServer [main] Tomcat initialized with port 8080 (http)
+2025-03-04 13:59:15,466 INFO DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2025-03-04 13:59:15,470 INFO DirectJDKLog [main] Starting service [Tomcat]
+2025-03-04 13:59:15,470 INFO DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/10.1.31]
+2025-03-04 13:59:15,539 INFO DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2025-03-04 13:59:15,541 INFO ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1636 ms
+2025-03-04 13:59:15,726 INFO HikariDataSource [main] HikariPool-1 - Starting...
+2025-03-04 13:59:15,927 INFO HikariPool [main] HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2fde9469
+2025-03-04 13:59:15,929 INFO HikariDataSource [main] HikariPool-1 - Start completed.
+2025-03-04 13:59:15,991 INFO LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-04 13:59:16,044 INFO Version [main] HHH000412: Hibernate ORM core version 6.5.3.Final
+2025-03-04 13:59:16,077 INFO RegionFactoryInitiator [main] HHH000026: Second-level cache disabled
+2025-03-04 13:59:16,499 INFO SpringPersistenceUnitInfo [main] No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-04 13:59:17,542 INFO JtaPlatformInitiator [main] HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-04 13:59:17,545 INFO AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-04 13:59:17,712 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -31,7 +31,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:20,948 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,713 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -44,7 +44,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,007 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,802 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -57,8 +57,8 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,058 INFO QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-03-03 16:25:21,065 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,848 INFO QueryEnhancerFactory [main] Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-03-04 13:59:17,856 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -71,7 +71,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,067 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,857 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -84,7 +84,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,085 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,875 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -97,7 +97,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,104 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,891 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -110,7 +110,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,112 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,898 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -123,7 +123,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,115 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,901 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -136,7 +136,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,159 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,950 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -149,7 +149,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,160 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,951 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -162,7 +162,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,167 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,957 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -175,7 +175,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,168 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,958 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -188,7 +188,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,169 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,959 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -201,7 +201,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,169 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,960 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -214,7 +214,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,170 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,964 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -227,7 +227,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,171 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,964 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -240,7 +240,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,172 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,965 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -253,7 +253,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,173 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,965 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -266,7 +266,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,185 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,978 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -279,7 +279,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,185 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,979 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -292,7 +292,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,187 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,981 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -305,7 +305,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,188 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,981 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -318,7 +318,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,190 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,984 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -331,7 +331,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,191 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:17,985 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -344,7 +344,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,219 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:18,021 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -357,7 +357,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,225 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:18,029 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -370,7 +370,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,232 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:18,040 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -383,7 +383,7 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,232 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
+2025-03-04 13:59:18,041 INFO StatisticalLoggingSessionEventListener [main] Session Metrics {
     0 nanoseconds spent acquiring 0 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
     0 nanoseconds spent preparing 0 JDBC statements;
@@ -396,58 +396,57 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:25:21,322 WARN JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-03-03 16:25:21,658 INFO DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
-2025-03-03 16:25:21,677 INFO TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
-2025-03-03 16:25:21,686 INFO StartupInfoLogger [main] Started DataJpaApplication in 4.823 seconds (process running for 5.636)
-2025-03-03 16:49:41,798 INFO DirectJDKLog [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-03-03 16:49:41,799 INFO FrameworkServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
-2025-03-03 16:49:41,800 INFO FrameworkServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
-2025-03-03 16:49:42,064 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-2] Session Metrics {
-    1178500 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 13:59:18,128 WARN JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-03-04 13:59:18,460 INFO DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2025-03-04 13:59:18,480 INFO TomcatWebServer [main] Tomcat started on port 8080 (http) with context path '/'
+2025-03-04 13:59:18,488 INFO StartupInfoLogger [main] Started DataJpaApplication in 5.176 seconds (process running for 5.938)
+2025-03-04 14:00:06,434 INFO DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-04 14:00:06,434 INFO FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2025-03-04 14:00:06,435 INFO FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2025-03-04 14:00:06,682 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-1] Session Metrics {
+    1353300 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    7798400 nanoseconds spent preparing 1 JDBC statements;
-    4595100 nanoseconds spent executing 1 JDBC statements;
+    6206400 nanoseconds spent preparing 1 JDBC statements;
+    2725100 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
-    9683700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    798118934563701 nanoseconds spent executing 1 pre-partial-flushes;
+    7100 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:50:20,682 WARN ResponseEntityExceptionHandler [http-nio-8080-exec-3] Request method 'POST' is not supported
-2025-03-03 16:50:26,687 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-4] Session Metrics {
-    1397700 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 14:00:13,884 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
+    978900 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    293000 nanoseconds spent preparing 1 JDBC statements;
-    1609100 nanoseconds spent executing 1 JDBC statements;
+    175500 nanoseconds spent preparing 1 JDBC statements;
+    1274500 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
-    207600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    798126251911901 nanoseconds spent executing 1 pre-partial-flushes;
+    3600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:55:40,936 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-7] Session Metrics {
-    1181700 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 14:02:46,459 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-6] Session Metrics {
+    1188500 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    449400 nanoseconds spent preparing 2 JDBC statements;
-    3821400 nanoseconds spent executing 2 JDBC statements;
+    1290000 nanoseconds spent preparing 1 JDBC statements;
+    3172600 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
-    7341700 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    12317600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:56:15,392 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-8] Session Metrics {
-    1247500 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 14:05:38,233 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-9] Session Metrics {
+    1507800 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    242500 nanoseconds spent preparing 2 JDBC statements;
-    2775800 nanoseconds spent executing 2 JDBC statements;
+    132600 nanoseconds spent preparing 1 JDBC statements;
+    1316000 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
@@ -456,136 +455,201 @@
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:56:45,434 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-9] Session Metrics {
-    1196600 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 14:08:19,228 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-1] Session Metrics {
+    1287500 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    501100 nanoseconds spent preparing 5 JDBC statements;
-    5904700 nanoseconds spent executing 5 JDBC statements;
+    319800 nanoseconds spent preparing 2 JDBC statements;
+    3804300 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    7571600 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 1 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:09:07,180 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
+    1180900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    102500 nanoseconds spent preparing 1 JDBC statements;
+    1148200 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    722321188535601 nanoseconds spent executing 1 pre-partial-flushes;
-    5800 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+    798659549671201 nanoseconds spent executing 1 pre-partial-flushes;
+    1900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 16:57:51,665 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-2] Session Metrics {
-    1211100 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 14:09:35,447 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-4] Session Metrics {
+    1264900 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    494100 nanoseconds spent preparing 5 JDBC statements;
-    6547900 nanoseconds spent executing 5 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    8540500 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 16:58:49,614 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
-    1263700 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    376500 nanoseconds spent preparing 3 JDBC statements;
-    3996700 nanoseconds spent executing 3 JDBC statements;
+    116700 nanoseconds spent preparing 1 JDBC statements;
+    1351900 nanoseconds spent executing 1 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
     0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    722445394087701 nanoseconds spent executing 1 pre-partial-flushes;
-    2200 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 17:01:15,483 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-6] Session Metrics {
-    1337300 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    616100 nanoseconds spent preparing 2 JDBC statements;
-    6064800 nanoseconds spent executing 2 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    542500 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 17:02:40,658 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-9] Session Metrics {
-    1371100 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    718700 nanoseconds spent preparing 4 JDBC statements;
-    5510900 nanoseconds spent executing 4 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    2532300 nanoseconds spent executing 1 flushes (flushing a total of 3 entities and 2 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 17:03:14,461 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-10] Session Metrics {
-    1603100 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    593500 nanoseconds spent preparing 3 JDBC statements;
-    4699000 nanoseconds spent executing 3 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    3588600 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 17:03:31,717 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-1] Session Metrics {
-    2204400 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    906200 nanoseconds spent preparing 3 JDBC statements;
-    7381500 nanoseconds spent executing 3 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    3379700 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 17:04:16,058 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-2] Session Metrics {
-    1316600 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    143800 nanoseconds spent preparing 1 JDBC statements;
-    1502700 nanoseconds spent executing 1 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    0 nanoseconds spent executing 0 pre-partial-flushes;
-    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
-}
-2025-03-03 17:04:33,822 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
-    873100 nanoseconds spent acquiring 1 JDBC connections;
-    0 nanoseconds spent releasing 0 JDBC connections;
-    429700 nanoseconds spent preparing 4 JDBC statements;
-    4076600 nanoseconds spent executing 4 JDBC statements;
-    0 nanoseconds spent executing 0 JDBC batches;
-    0 nanoseconds spent performing 0 L2C puts;
-    0 nanoseconds spent performing 0 L2C hits;
-    0 nanoseconds spent performing 0 L2C misses;
-    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
-    722789601795701 nanoseconds spent executing 1 pre-partial-flushes;
+    798687817567301 nanoseconds spent executing 1 pre-partial-flushes;
     2000 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 17:05:42,607 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-6] Session Metrics {
-    1759800 nanoseconds spent acquiring 1 JDBC connections;
+2025-03-04 14:11:40,280 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-7] Session Metrics {
+    1759300 nanoseconds spent acquiring 1 JDBC connections;
     0 nanoseconds spent releasing 0 JDBC connections;
-    697300 nanoseconds spent preparing 7 JDBC statements;
-    10077400 nanoseconds spent executing 7 JDBC statements;
+    565500 nanoseconds spent preparing 5 JDBC statements;
+    8219400 nanoseconds spent executing 5 JDBC statements;
     0 nanoseconds spent executing 0 JDBC batches;
     0 nanoseconds spent performing 0 L2C puts;
     0 nanoseconds spent performing 0 L2C hits;
     0 nanoseconds spent performing 0 L2C misses;
-    8062400 nanoseconds spent executing 1 flushes (flushing a total of 4 entities and 1 collections);
+    9889900 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
     0 nanoseconds spent executing 0 pre-partial-flushes;
     0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
 }
-2025-03-03 17:14:17,855 INFO AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-03-03 17:14:17,857 INFO HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
-2025-03-03 17:14:17,862 INFO HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
+2025-03-04 14:13:40,404 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-10] Session Metrics {
+    1421900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    341200 nanoseconds spent preparing 3 JDBC statements;
+    3741500 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    798932768488001 nanoseconds spent executing 1 pre-partial-flushes;
+    2600 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:15:52,962 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
+    1324600 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    577100 nanoseconds spent preparing 2 JDBC statements;
+    5801700 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    612200 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:18:02,839 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-6] Session Metrics {
+    1289400 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    291200 nanoseconds spent preparing 1 JDBC statements;
+    1712700 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    77900 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:19:56,451 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-9] Session Metrics {
+    1137000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    205400 nanoseconds spent preparing 1 JDBC statements;
+    1165800 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    162200 nanoseconds spent executing 1 flushes (flushing a total of 1 entities and 0 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:20:56,419 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-10] Session Metrics {
+    1686500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    420900 nanoseconds spent preparing 3 JDBC statements;
+    4269700 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    2497800 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:23:08,157 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
+    1465500 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    148400 nanoseconds spent preparing 1 JDBC statements;
+    1341300 nanoseconds spent executing 1 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:25:01,495 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-6] Session Metrics {
+    1331300 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    843300 nanoseconds spent preparing 5 JDBC statements;
+    7385100 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    7216200 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:25:05,434 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-7] Session Metrics {
+    1864000 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    863400 nanoseconds spent preparing 3 JDBC statements;
+    6840300 nanoseconds spent executing 3 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    3434200 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:27:30,879 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-10] Session Metrics {
+    1358900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    270300 nanoseconds spent preparing 2 JDBC statements;
+    2147200 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:28:36,237 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-3] Session Metrics {
+    1429900 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    534900 nanoseconds spent preparing 5 JDBC statements;
+    6513400 nanoseconds spent executing 5 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    0 nanoseconds spent executing 0 flushes (flushing a total of 0 entities and 0 collections);
+    799828599012001 nanoseconds spent executing 1 pre-partial-flushes;
+    1900 nanoseconds spent executing 1 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:30:21,648 INFO StatisticalLoggingSessionEventListener [http-nio-8080-exec-6] Session Metrics {
+    1901300 nanoseconds spent acquiring 1 JDBC connections;
+    0 nanoseconds spent releasing 0 JDBC connections;
+    275000 nanoseconds spent preparing 2 JDBC statements;
+    3877100 nanoseconds spent executing 2 JDBC statements;
+    0 nanoseconds spent executing 0 JDBC batches;
+    0 nanoseconds spent performing 0 L2C puts;
+    0 nanoseconds spent performing 0 L2C hits;
+    0 nanoseconds spent performing 0 L2C misses;
+    2329400 nanoseconds spent executing 1 flushes (flushing a total of 2 entities and 1 collections);
+    0 nanoseconds spent executing 0 pre-partial-flushes;
+    0 nanoseconds spent executing 0 partial-flushes (flushing a total of 0 entities and 0 collections)
+}
+2025-03-04 14:31:18,643 INFO AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-04 14:31:18,646 INFO HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown initiated...
+2025-03-04 14:31:18,649 INFO HikariDataSource [SpringApplicationShutdownHook] HikariPool-1 - Shutdown completed.
