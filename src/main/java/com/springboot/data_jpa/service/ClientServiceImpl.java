@@ -16,6 +16,8 @@ public class ClientServiceImpl implements ClientService{
 
     @Override
     public List<Client> getAllClient() {
+        long countPersonList = clientRepository.findAll().stream().count();
+        System.out.println("Client in the list: " + countPersonList);
         return clientRepository.findAll();
     }
 
@@ -35,6 +37,18 @@ public class ClientServiceImpl implements ClientService{
         else System.out.println("ID is not found.");
         return client;
     }
+
+    /*@Override
+    public long countClient() {
+       long countList = clientRepository.count();
+        return countList;
+    }
+
+    @Override
+    public void countClientList() {
+        long countList = clientRepository.count();
+        System.out.println("Client int the list: " + countList);
+    }*/
 
     @Override
     public void deleteClient(int id) {

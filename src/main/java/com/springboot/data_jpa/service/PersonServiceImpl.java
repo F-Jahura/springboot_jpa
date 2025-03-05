@@ -25,14 +25,17 @@ public class PersonServiceImpl implements PersonService {
 
     //List of all people
     @Override
-    public List<Person> getAllPeople()
-    {
+    public List<Person> getAllPeople() {
+        long countPersonList = repository.findAll().stream().count();
+        System.out.println("Person in the list: " + countPersonList);
         return repository.findAll();
     }
 
     //find person by name
     @Override
     public List<Person> findAllByName(String name) {
+        long countPersonList = repository.findAllByName(name).stream().count();
+        System.out.println("Person in the list: " + countPersonList);
         return repository.findAllByName(name);
     }
 
@@ -53,12 +56,16 @@ public class PersonServiceImpl implements PersonService {
     //find person by age
     @Override
     public List<Person> findAllByBirthday(LocalDate birhtday) {
+        long countPersonList = repository.findAllByBirthday(birhtday).stream().count();
+        System.out.println("Person in the list: " + countPersonList);
         return repository.findAllByBirthday(birhtday);
     }
 
     //find person by name and age
     @Override
     public List<Person> findAllByNameAndBirthday(String name, LocalDate birthday) {
+        long countPersonList = repository.findAllByNameAndBirthday(name, birthday).stream().count();
+        System.out.println("Person in the list: " + countPersonList);
         return repository.findAllByNameAndBirthday(name, birthday);
     }
 
@@ -78,6 +85,13 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public Person findByName(String name) {
         return repository.findByName(name);
+    }
+
+    @Override
+    public List<Person> findAllPersonOver30() {
+        long countPersonList = repository.findAllPersonOver30().stream().count();
+        System.out.println("Person in the list: " + countPersonList);
+        return repository.findAllPersonOver30();
     }
 
     @Override
@@ -101,6 +115,12 @@ public class PersonServiceImpl implements PersonService {
     public void updateDepartment1(int personID, int DepartmentID){
 
     }
+
+    /*@Override
+    public void countPersonList() {
+        long countPersonList = repository.count();
+        System.out.println("Person in the list: " + countPersonList);
+    }*/
 
 }
 

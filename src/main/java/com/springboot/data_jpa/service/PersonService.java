@@ -18,11 +18,14 @@ public interface PersonService {
 
     public Person getPerson(int id);
     public Person findByName(String name);
+    public List<Person> findAllPersonOver30();
 
     public List<Person> savePersonList(List<Person> person);
 
     public void updateDepartment(UpdatePersonDepartmentRequest updatePersonDepartmentRequest);
     public void updateDepartment1(int personID, int DepartmentID);
+
+    //public void countPersonList();
 
 
 

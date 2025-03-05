@@ -10,5 +10,8 @@ public interface ClientService {
 
     public Client getClient(int id);
 
+    //public long countClient();
+    //public void countClientList();
+
     public void deleteClient(int id);
 }

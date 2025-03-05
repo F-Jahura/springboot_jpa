@@ -8,19 +8,14 @@ import com.springboot.data_jpa.repository.*;
 import com.springboot.data_jpa.service.*;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
-import lombok.extern.log4j.Log4j2;
 import lombok.extern.slf4j.Slf4j;
-import org.aspectj.weaver.ast.Or;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -32,11 +27,11 @@ public class MyRestController {
     @Autowired
     private PersonService personService;
     @Autowired
-    PassportService passportService;
+    private PassportService passportService;
     @Autowired
-    PersonRepository personRepository;
+    private PersonRepository personRepository;
     @Autowired
-    Converter converter;
+    private Converter converter;
 
     @Autowired
     private PassportRepository passportRepository;
@@ -55,7 +50,13 @@ public class MyRestController {
     private ClientService clientService;
 
     @Autowired
+    private ClientRepository clientRepository;
+
+    @Autowired
     private OrderService orderService;
+
+    @Autowired
+    private OrderRepository orderRepository;
 
     //List of all people
     @GetMapping("/person")
@@ -97,7 +98,6 @@ public class MyRestController {
 @GetMapping("/person/get-age")
     public List<Person> showPersonByAge(@RequestParam LocalDate birthday){
         List<Person> personList = personService.findAllByBirthday(birthday);
-    //System.out.println(personList);
         return personList;
 }
 
@@ -117,7 +117,7 @@ public class MyRestController {
 
 @GetMapping("/age-over30")
     public List<PersonDto> findAge30(){
-        List<Person> findAgeOver30 = personRepository.findAllPersonOver30();
+        List<Person> findAgeOver30 = personService.findAllPersonOver30();
         return converter.entityToDto(findAgeOver30);
 }
 
@@ -203,7 +203,8 @@ public Department updateDepartment(@RequestBody Department department){
 @GetMapping("/get-department")
 public List<Department> showAllDepartment(){
     List<Department> listDepartment = departmentService.getAllDepartment();
-    System.out.println(departmentRepository.count());
+    //System.out.println(departmentRepository.count());
+    departmentRepository.count();
     return listDepartment;
 }
 
@@ -276,6 +277,11 @@ public Client updateClientDto(@RequestBody Client client){
      List<Client> allClient = clientService.getAllClient();
      return allClient;
  }
+
+ /*@GetMapping("/count-client")
+ public long countAllClient(){
+        return clientService.countClient();
+ }*/
 
 
 /*@GetMapping("/get-client")
@@ -365,16 +371,6 @@ public String deleteOrder(@PathVariable int id){
     public void sendEmailGet(){
         emailService.sendSimpleMailGet();
     }
-
-    /*@GetMapping("/logback")
-    public String index(){
-        log.trace("A trace message");
-        log.debug("A debug message");
-        log.info("An info message");
-        log.warn("A warn message");
-        log.error("An error message");
-        return "Howdy, check out the logs to get output....";
-    }*/
 
 
     //////////////////////////////////////////////////////
